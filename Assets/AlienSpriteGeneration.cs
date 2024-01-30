@@ -3,9 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using Random = UnityEngine.Random;
 
 public class AlienSpriteGeneration : MonoBehaviour
 {
+    [SerializeField, Min(1)] private int aliensToGenerate;
+    [SerializeField] GameObject alienPrefab;
+    [SerializeField] Vector2 spawnRandom;
+    
     List<GameObject> bodyPrefabs;
     List<GameObject> headPrefabs;
     List<GameObject> facePrefabs;
@@ -13,6 +18,12 @@ public class AlienSpriteGeneration : MonoBehaviour
     private void Start()
     {
         BodypartsPrefabsLoad();
+
+
+        for (int i = 0; i < aliensToGenerate; i++)
+        {
+            GenerateAlien();
+        }
     }
 
     private void BodypartsPrefabsLoad()
@@ -42,13 +53,28 @@ public class AlienSpriteGeneration : MonoBehaviour
         }
     }
 
-    public void GenerateSprite()
+
+    public void GenerateAlien()
+    {
+        Vector2 position = new Vector2(Random.Range(-spawnRandom.x, spawnRandom.x),
+            Random.Range(-spawnRandom.y, spawnRandom.y));
+
+        GameObject alien = Instantiate(alienPrefab, position, Quaternion.identity);
+        
+        GenerateSprite(alien.transform);
+    }
+
+    public void GenerateSprite(Transform parentObject)
     {
         //generating body
+        GameObject body = Instantiate(bodyPrefabs[Random.Range(0, bodyPrefabs.Count)], parentObject);
         
-        
+        //generating head
+        GameObject head = Instantiate(headPrefabs[Random.Range(0, headPrefabs.Count)], body.transform.GetChild(0));
     
-     }
+        //generating face
+        GameObject face = Instantiate(facePrefabs[Random.Range(0, facePrefabs.Count)], head.transform.GetChild(0));
+    }
 
     private void OnDisable()
     {
