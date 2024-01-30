@@ -1,17 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class AlienSpriteGeneration : MonoBehaviour
 {
-    [SerializeField] private string bodyPrefabPath;
-    [SerializeField] private int bodyCount;
     List<GameObject> bodyPrefabs;
-    [SerializeField] private string headPrefabPath;
-    [SerializeField] private int headCount;
     List<GameObject> headPrefabs;
-    [SerializeField] private string facePrefabPath;
-    [SerializeField] private int faceCount;
     List<GameObject> facePrefabs;
 
     private void Start()
@@ -22,27 +18,27 @@ public class AlienSpriteGeneration : MonoBehaviour
     private void BodypartsPrefabsLoad()
     {
         bodyPrefabs = new List<GameObject>();
-        for (int i = 1; i == bodyCount; i++)
+        var allBodyPrefs = Resources.LoadAll<GameObject>("body").Cast<GameObject>();
+        foreach (var pref in allBodyPrefs)
         {
-            string path = bodyPrefabPath + i.ToString();
-            GameObject bodyPrefab = Resources.Load<GameObject>(path) as GameObject;
-            bodyPrefabs.Add(bodyPrefab);
+            bodyPrefabs.Add(pref);
+            Debug.Log(pref.name + " loaded");
         }
-        
+
         headPrefabs = new List<GameObject>();
-        for (int i = 1; i == headCount; i++)
+        var allHeadPrefs = Resources.LoadAll<GameObject>("head").Cast<GameObject>();
+        foreach (var pref in allHeadPrefs)
         {
-            string path = headPrefabPath + i.ToString();
-            GameObject headPrefab = Resources.Load<GameObject>(path) as GameObject;
-            headPrefabs.Add(headPrefab);
+            headPrefabs.Add(pref);
+            Debug.Log(pref.name + " loaded");
         }
-        
+
         facePrefabs = new List<GameObject>();
-        for (int i = 1; i == faceCount; i++)
+        var allFacePrefs = Resources.LoadAll<GameObject>("face").Cast<GameObject>();
+        foreach (var pref in allFacePrefs)
         {
-            string path = facePrefabPath + i.ToString();
-            GameObject facePrefab = Resources.Load<GameObject>(path) as GameObject;
-            facePrefabs.Add(facePrefab);
+            facePrefabs.Add(pref);
+            Debug.Log(pref.name + " loaded");
         }
     }
 
@@ -53,8 +49,9 @@ public class AlienSpriteGeneration : MonoBehaviour
         
     
      }
-    
-    
-   
-  
+
+    private void OnDisable()
+    {
+        Resources.UnloadUnusedAssets();
+    }
 }
