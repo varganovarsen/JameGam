@@ -285,6 +285,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2e6a62f41dfbe34384481cec4f3e9ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bodyPrefabPath: body/body
+  bodyCount: 1
+  headPrefabPath: head/head
+  headCount: 1
+  facePrefabPath: face/face
+  faceCount: 1
 --- !u!4 &1043090205
 Transform:
   m_ObjectHideFlags: 0
