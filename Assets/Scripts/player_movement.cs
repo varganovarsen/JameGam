@@ -5,8 +5,14 @@ using UnityEngine;
 public class player_movement : MonoBehaviour
 {
     private bool _isMoving = false;
-    private Vector3 _targetPosition;
+    private Vector2 _targetPosition;
     public float _speed = 2f;
+
+    [SerializeField] private float targetRadius = 0.25f;
+
+    [SerializeField] private Transform targetPoint;
+
+    [SerializeField] LayerMask wallLayer;
 
     void Update()
     {
@@ -32,17 +38,33 @@ public class player_movement : MonoBehaviour
         }
 
         _targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        _targetPosition.z = transform.position.z;
+        
 
+        Vector2 dir =  (_targetPosition - (Vector2)transform.position).normalized;
+        RaycastHit2D hit = Physics2D.Raycast(
+            origin: transform.position,
+            direction: dir,
+            distance: Vector2.Distance(transform.position, _targetPosition),
+            layerMask: wallLayer);
+
+        if (hit)
+        {
+            _targetPosition = hit.point;
+            
+        }
+        
+        targetPoint.position = _targetPosition;
         _isMoving = true;
     }
 
     private void Move()
     {
         transform.position = Vector3.MoveTowards(transform.position, _targetPosition, _speed * Time.fixedDeltaTime);
-        if (transform.position == _targetPosition)
+        if (Vector2.Distance(transform.position, _targetPosition) < targetRadius)
         {
             _isMoving = false;
         }
     }
+
+    
 }
