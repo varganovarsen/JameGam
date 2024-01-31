@@ -288,6 +288,14 @@ MonoBehaviour:
   aliensToGenerate: 3
   alienPrefab: {fileID: 1895400197322616387, guid: ad697b59bd934c94c9c3e7aca48bda02, type: 3}
   spawnRandom: {x: 3, y: 3}
+  spriteMaterials:
+  - {fileID: 2100000, guid: bbb22b36e8bc1ce4da620827b176ecfa, type: 2}
+  - {fileID: 2100000, guid: 2ecd47aa14490de45a613ba56d068014, type: 2}
+  - {fileID: 2100000, guid: 085e3066d69424440ac612fa9ee6cf19, type: 2}
+  - {fileID: 2100000, guid: a8954025f1ff66b4f85bb1ebc9f17d5d, type: 2}
+  - {fileID: 2100000, guid: ab905166b596b4e45b0a521a2e3a15c9, type: 2}
+  - {fileID: 2100000, guid: fbf57ae937a2f0d478de31c8527e66f9, type: 2}
+  - {fileID: 2100000, guid: 0553dcac641396142b239820994d9c58, type: 2}
   _loader: {fileID: 1936999013}
 --- !u!4 &1043090205
 Transform:
