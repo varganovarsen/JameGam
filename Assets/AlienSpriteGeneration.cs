@@ -16,6 +16,8 @@ public class AlienSpriteGeneration : MonoBehaviour
     List<GameObject> headPrefabs;
     List<GameObject> facePrefabs;
 
+    [SerializeField] private List<Material> spriteMaterials;
+
     [SerializeField] private GoogleSheetLoader _loader;
 
     private void Awake()
@@ -66,7 +68,7 @@ public class AlienSpriteGeneration : MonoBehaviour
         }
     }
 
-
+   
     public void GenerateAlien()
     {
         Vector2 position = new Vector2(Random.Range(-spawnRandom.x, spawnRandom.x),
@@ -76,12 +78,13 @@ public class AlienSpriteGeneration : MonoBehaviour
         AlienData _alienData;
         alien.TryGetComponent<AlienData>(out _alienData);
 
-        if(!_alienData){
+        if (!_alienData)
+        {
             Debug.Log("There is no AlienData component attached to " + alien + " object");
             return;
-        }  
+        }
 
-        int nameID = Random.Range(0,_nameBank.Names.Count);
+        int nameID = Random.Range(0, _nameBank.Names.Count);
         _alienData.AlienName = _nameBank.Names[nameID];
         _nameBank.Names.Remove(_alienData.AlienName);
         _alienData.AlienMouthPoint = GenerateSprite(alien.transform);
@@ -89,15 +92,21 @@ public class AlienSpriteGeneration : MonoBehaviour
 
     public Transform GenerateSprite(Transform parentObject)
     {
+        
+        Material mat = spriteMaterials[Random.Range(0, spriteMaterials.Count)];
         //generating body
         GameObject body = Instantiate(bodyPrefabs[Random.Range(0, bodyPrefabs.Count)], parentObject);
-        
+
+        body.GetComponentInChildren<SpriteRenderer>().material = mat;
         //generating head
         GameObject head = Instantiate(headPrefabs[Random.Range(0, headPrefabs.Count)], body.transform.GetChild(0));
-    
+
+        head.GetComponentInChildren<SpriteRenderer>().material = mat;
         //generating face
         GameObject face = Instantiate(facePrefabs[Random.Range(0, facePrefabs.Count)], head.transform.GetChild(0));
-    
+
+        face.GetComponentInChildren<SpriteRenderer>().material = mat;
+
         return face.transform.GetChild(0);
     }
 

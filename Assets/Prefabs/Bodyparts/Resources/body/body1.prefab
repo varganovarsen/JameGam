@@ -85,6 +85,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: body01_spr
       objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 58c96816b4b490646a2cee1dd5d4038e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0553dcac641396142b239820994d9c58, type: 2}
     - target: {fileID: 7878350319992209165, guid: 58c96816b4b490646a2cee1dd5d4038e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
