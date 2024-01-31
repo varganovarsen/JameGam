@@ -288,6 +288,7 @@ MonoBehaviour:
   aliensToGenerate: 3
   alienPrefab: {fileID: 1895400197322616387, guid: ad697b59bd934c94c9c3e7aca48bda02, type: 3}
   spawnRandom: {x: 3, y: 3}
+  _loader: {fileID: 1936999013}
 --- !u!4 &1043090205
 Transform:
   m_ObjectHideFlags: 0
@@ -312,6 +313,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1936999012}
+  - component: {fileID: 1936999015}
+  - component: {fileID: 1936999014}
+  - component: {fileID: 1936999013}
   m_Layer: 0
   m_Name: NameBankLoader
   m_TagString: Untagged
@@ -334,6 +338,43 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1936999013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1936999011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 370a944683214a42b3001c0a2dfee62d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sheetId: 17Rn5t2pjaHjpBB1OdbKP10q2beUXB0U6eiFrFSnufKU
+--- !u!114 &1936999014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1936999011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 145cc70d324130646b0130d489ef1744, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1936999015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1936999011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b3810cfcace485d92fef8524c69116d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

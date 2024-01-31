@@ -27,8 +27,6 @@ public class AlienSpriteGeneration : MonoBehaviour
     {
         BodypartsPrefabsLoad();
 
-
-
     }
 
     public void StartGenerating(NameBank names)
@@ -75,13 +73,21 @@ public class AlienSpriteGeneration : MonoBehaviour
             Random.Range(-spawnRandom.y, spawnRandom.y));
 
         GameObject alien = Instantiate(alienPrefab, position, Quaternion.identity);
+        AlienData _alienData;
+        alien.TryGetComponent<AlienData>(out _alienData);
+
+        if(!_alienData){
+            Debug.Log("There is no AlienData component attached to " + alien + " object");
+            return;
+        }  
+
         int nameID = Random.Range(0,_nameBank.Names.Count);
-        alien.transform.name = _nameBank.Names[nameID];
-        _nameBank.Names.Remove(_nameBank.Names[nameID]);
-        GenerateSprite(alien.transform);
+        _alienData.AlienName = _nameBank.Names[nameID];
+        _nameBank.Names.Remove(_alienData.AlienName);
+        _alienData.AlienMouthPoint = GenerateSprite(alien.transform);
     }
 
-    public void GenerateSprite(Transform parentObject)
+    public Transform GenerateSprite(Transform parentObject)
     {
         //generating body
         GameObject body = Instantiate(bodyPrefabs[Random.Range(0, bodyPrefabs.Count)], parentObject);
@@ -91,6 +97,8 @@ public class AlienSpriteGeneration : MonoBehaviour
     
         //generating face
         GameObject face = Instantiate(facePrefabs[Random.Range(0, facePrefabs.Count)], head.transform.GetChild(0));
+    
+        return face.transform.GetChild(0);
     }
 
     private void OnDisable()

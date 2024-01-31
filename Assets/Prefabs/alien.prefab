@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5634952836524294043}
   - component: {fileID: 3607785394286186936}
+  - component: {fileID: -2169715768436944394}
   m_Layer: 0
   m_Name: alien
   m_TagString: Untagged
@@ -44,3 +45,17 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortAtRoot: 0
+--- !u!114 &-2169715768436944394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895400197322616387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6d222dc120792a488944fc06df1c805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AlienName: 
+  AlienMouthPoint: {fileID: 0}
