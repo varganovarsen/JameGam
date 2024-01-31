@@ -10,21 +10,36 @@ public class AlienSpriteGeneration : MonoBehaviour
     [SerializeField, Min(1)] private int aliensToGenerate;
     [SerializeField] GameObject alienPrefab;
     [SerializeField] Vector2 spawnRandom;
-    
+    NameBank _nameBank;
+
     List<GameObject> bodyPrefabs;
     List<GameObject> headPrefabs;
     List<GameObject> facePrefabs;
+
+    [SerializeField] private GoogleSheetLoader _loader;
+
+    private void Awake()
+    {
+        _loader.OnProcessData += StartGenerating;
+    }
 
     private void Start()
     {
         BodypartsPrefabsLoad();
 
 
+
+    }
+
+    public void StartGenerating(NameBank names)
+    {
+        _nameBank = names;
         for (int i = 0; i < aliensToGenerate; i++)
         {
             GenerateAlien();
         }
     }
+
 
     private void BodypartsPrefabsLoad()
     {
@@ -60,7 +75,9 @@ public class AlienSpriteGeneration : MonoBehaviour
             Random.Range(-spawnRandom.y, spawnRandom.y));
 
         GameObject alien = Instantiate(alienPrefab, position, Quaternion.identity);
-        
+        int nameID = Random.Range(0,_nameBank.Names.Count);
+        alien.transform.name = _nameBank.Names[nameID];
+        _nameBank.Names.Remove(_nameBank.Names[nameID]);
         GenerateSprite(alien.transform);
     }
 
