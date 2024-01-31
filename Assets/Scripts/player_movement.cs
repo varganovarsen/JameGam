@@ -39,7 +39,7 @@ public class player_movement : MonoBehaviour
 
     private void Move()
     {
-        transform.position = Vector3.MoveTowards(transform.position, _targetPosition, _speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, _targetPosition, _speed * Time.fixedDeltaTime);
         if (transform.position == _targetPosition)
         {
             _isMoving = false;
