@@ -1,0 +1,130 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5044934948134721204
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4653247371738336105}
+  - component: {fileID: 8902382334014261219}
+  - component: {fileID: 4346731224426349924}
+  - component: {fileID: 7045995040944220653}
+  m_Layer: 0
+  m_Name: NameBankLoader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4653247371738336105
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5044934948134721204}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.522202, y: -0.1972121, z: -0.009834654}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1173208282965781037}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8902382334014261219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5044934948134721204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b3810cfcace485d92fef8524c69116d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4346731224426349924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5044934948134721204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 145cc70d324130646b0130d489ef1744, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7045995040944220653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5044934948134721204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 370a944683214a42b3001c0a2dfee62d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sheetId: 17Rn5t2pjaHjpBB1OdbKP10q2beUXB0U6eiFrFSnufKU
+--- !u!1 &5081230218336811032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1173208282965781037}
+  - component: {fileID: 5648801989498126423}
+  m_Layer: 0
+  m_Name: alienGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1173208282965781037
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5081230218336811032}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4653247371738336105}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5648801989498126423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5081230218336811032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e6a62f41dfbe34384481cec4f3e9ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aliensToGenerate: 3
+  alienPrefab: {fileID: 1895400197322616387, guid: ad697b59bd934c94c9c3e7aca48bda02, type: 3}
+  spawnRandom: {x: 3, y: 3}
+  spriteMaterials:
+  - {fileID: 2100000, guid: bbb22b36e8bc1ce4da620827b176ecfa, type: 2}
+  - {fileID: 2100000, guid: 2ecd47aa14490de45a613ba56d068014, type: 2}
+  - {fileID: 2100000, guid: 085e3066d69424440ac612fa9ee6cf19, type: 2}
+  - {fileID: 2100000, guid: a8954025f1ff66b4f85bb1ebc9f17d5d, type: 2}
+  - {fileID: 2100000, guid: ab905166b596b4e45b0a521a2e3a15c9, type: 2}
+  - {fileID: 2100000, guid: fbf57ae937a2f0d478de31c8527e66f9, type: 2}
+  - {fileID: 2100000, guid: 0553dcac641396142b239820994d9c58, type: 2}
+  _loader: {fileID: 7045995040944220653}
