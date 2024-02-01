@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class GuestGuessController : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -15,6 +16,8 @@ public class GuestGuessController : MonoBehaviour, IPointerEnterHandler, IPointe
 
     [SerializeField] private GameObject nameInListUIPrefab;
 
+    bool ignoreMouse = false;
+
     private void Awake() {
         if (!instance)
         {
@@ -24,6 +27,14 @@ public class GuestGuessController : MonoBehaviour, IPointerEnterHandler, IPointe
         {
             Destroy(gameObject);
         }
+    }
+
+    private void OnEnable() {
+        GameStateController.ChangeState += OnStateChanged;
+    }
+    private void OnDisable()
+    {
+        GameStateController.ChangeState -= OnStateChanged;  
     }
 
     private void Start(){
@@ -37,19 +48,6 @@ public class GuestGuessController : MonoBehaviour, IPointerEnterHandler, IPointe
 
     }
 
-
-    
-  
-    private void OnMouseEnter()
-    {
-        
-    }
-
-    
-    private void OnMouseExit()
-    {
-        
-    }
 
 
     private void AddGuestToListUI(AlienData guest)
@@ -78,13 +76,38 @@ public class GuestGuessController : MonoBehaviour, IPointerEnterHandler, IPointe
 
    public  void OnPointerEnter(PointerEventData data)
     {
-        Debug.Log("OnPointerEnter called.");
+        
+        if(!ignoreMouse)
         ToggleMenuOpen();
     }
 
     public  void OnPointerExit(PointerEventData data)
     {
-        Debug.Log("OnPointerExit called.");
+        if(!ignoreMouse)
         ToggleMenuOpen();
+    }
+
+    public void OnStateChanged(GameState state)
+    {
+        switch (state)
+        {   
+            case GameState.guessing:
+                ToggleMenuOpen(true);
+                ignoreMouse = true;
+                GetComponentInChildren<GridLayoutGroup>().enabled = false;
+
+                Transform names = transform.Find("names");
+
+                for (int i = 0; i < names.childCount; i++)
+                {
+                    names.GetChild(i).GetComponent<NameUiDrag>().enabled = true;
+                }
+                
+            break;
+            default:
+            ignoreMouse = false;
+            break;
+        }
+
     }
 }
