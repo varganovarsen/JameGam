@@ -53,5 +53,4 @@ public class AlienDialogue : MonoBehaviour
         //TODO Обновить таймер исчезнования имени
         _data.ResetVisibilityTime();
     }
-
 }
