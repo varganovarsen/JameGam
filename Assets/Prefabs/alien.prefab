@@ -63,9 +63,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AlienName: 
+  meeted: 0
   AlienMouthPoint: {fileID: 0}
   forgetNameTime: 10
-  guiLayoutGroup: {fileID: 2193821635594105571}
+  _canvasGroup: {fileID: 2193821635594105571}
   nameText: {fileID: 4294989798328750231}
 --- !u!50 &2725592468187262640
 Rigidbody2D:

@@ -32,7 +32,7 @@ public class player_movement : MonoBehaviour
         {
             SetTargetPosition();
         }
-        if (_isMoving)
+        if (_isMoving && GameStateController.CanAct)
         {
             Move();
         }

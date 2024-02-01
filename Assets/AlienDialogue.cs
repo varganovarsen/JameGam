@@ -30,7 +30,7 @@ public class AlienDialogue : MonoBehaviour
     /// </summary>
     private void OnMouseDown()
     {
-        if (canStartDialogue)
+        if (canStartDialogue && GameStateController.CanAct)
         {
             if (!_data.meeted)
             {

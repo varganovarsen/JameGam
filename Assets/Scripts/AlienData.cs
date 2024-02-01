@@ -14,28 +14,73 @@ public class AlienData : MonoBehaviour
     [SerializeField] float forgetNameTime = 10f;
     float _elapsedTime = 0;
 
-    [SerializeField] public CanvasGroup guiLayoutGroup;
+    bool forgettingName = true;
+
+    [SerializeField] public CanvasGroup _canvasGroup;
 
     [SerializeField] TMP_Text nameText;
+
+    /// <summary>
+    /// This function is called when the object becomes enabled and active.
+    /// </summary>
+    private void OnEnable()
+    {
+        GameStateController.ChangeState += OnStateChanged;
+    }
+
+    /// <summary>
+    /// This function is called when the behaviour becomes disabled or inactive.
+    /// </summary>
+    private void OnDisable()
+    {
+        GameStateController.ChangeState -= OnStateChanged;
+    }
 
 
     private void Start() {
         nameText.text = AlienName;
-        guiLayoutGroup.alpha = 0;
+        _canvasGroup.alpha = 0;
         _elapsedTime = forgetNameTime;
+        
+
+
+        AlienGroupController.instance.aliens.Add(this);
     }
 
     private void Update()
     {
-        _elapsedTime += Time.deltaTime;
-        Mathf.Clamp(_elapsedTime, 0, forgetNameTime);
-        guiLayoutGroup.alpha = Mathf.Lerp(1 , 0, _elapsedTime / forgetNameTime);
+
+        if (forgettingName)
+        {
+            _elapsedTime += Time.deltaTime;
+            Mathf.Clamp(_elapsedTime, 0, forgetNameTime);
+            _canvasGroup.alpha = Mathf.Lerp(1 , 0, _elapsedTime / forgetNameTime);
+        }
         
     }
     
     public void ResetVisibilityTime()
     {
         _elapsedTime = 0;
+    }
+
+    public void OnStateChanged(GameState gameState)
+    {
+        switch (gameState)
+        {   
+            case GameState.guessing:
+                OnGuessingState();
+            break;
+            default:
+
+            break;
+        }
+    }
+
+    public void OnGuessingState()
+    {
+        forgettingName = false;
+        _canvasGroup.alpha = 0f;
     }
     
 }
