@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class player_movement : MonoBehaviour
 {
+    public static player_movement instance; 
+
     private bool _isMoving = false;
     private Vector2 _targetPosition;
     public float _speed = 2f;
@@ -12,6 +14,17 @@ public class player_movement : MonoBehaviour
 
     
     [SerializeField] LayerMask wallLayer;
+
+    private void Awake() {
+        if (!instance)
+        {
+            instance = this;
+        } else
+        {
+            Destroy(gameObject);
+        }
+
+    }
 
     void Update()
     {
@@ -58,7 +71,7 @@ public class player_movement : MonoBehaviour
     private void Move()
     {
         transform.position = Vector3.MoveTowards(transform.position, _targetPosition, _speed * Time.fixedDeltaTime);
-        if (Vector2.Distance(transform.position, _targetPosition) < 0.15f)
+        if (Vector2.Distance(transform.position, _targetPosition) < targetRadius)
         {
             _isMoving = false;
         }
