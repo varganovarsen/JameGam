@@ -10,8 +10,7 @@ public class player_movement : MonoBehaviour
 
     [SerializeField] private float targetRadius = 0.25f;
 
-    [SerializeField] private Transform targetPoint;
-
+    
     [SerializeField] LayerMask wallLayer;
 
     void Update()
@@ -53,14 +52,13 @@ public class player_movement : MonoBehaviour
             
         }
         
-        targetPoint.position = _targetPosition;
         _isMoving = true;
     }
 
     private void Move()
     {
         transform.position = Vector3.MoveTowards(transform.position, _targetPosition, _speed * Time.fixedDeltaTime);
-        if (Vector2.Distance(transform.position, _targetPosition) < targetRadius)
+        if (Vector2.Distance(transform.position, _targetPosition) < 0.15f)
         {
             _isMoving = false;
         }
