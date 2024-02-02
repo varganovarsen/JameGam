@@ -11,7 +11,16 @@ public class AlienDialogue : MonoBehaviour
 
     AlienData _data;
 
+    /// <summary>
+    /// Called when the mouse enters the GUIElement or Collider.
+    /// </summary>
+    private void OnMouseEnter()
+    {
+        NameUiDrag.CurrentAlien = _data;
+    }
+
     private void OnMouseOver() {
+
         if (Vector2.Distance(player_movement.instance.transform.position, transform.position) < startDialogueDistance)
         {
             canStartDialogue = true;
@@ -21,6 +30,7 @@ public class AlienDialogue : MonoBehaviour
     
     private void OnMouseExit()
     {
+        NameUiDrag.CurrentAlien = null;
         canStartDialogue = false;
     }
 

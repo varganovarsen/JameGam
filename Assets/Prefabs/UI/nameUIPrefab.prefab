@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1919107423785697290}
   - component: {fileID: 5806002772005493890}
   - component: {fileID: 7478451904156947834}
+  - component: {fileID: 5637245675800185418}
   m_Layer: 5
   m_Name: nameUIPrefab
   m_TagString: Untagged
@@ -149,3 +150,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fc62d7143b2b1b4a863fa610caf54ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alienLayer:
+    serializedVersion: 2
+    m_Bits: 256
+--- !u!225 &5637245675800185418
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8229126021790549520}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

@@ -36,6 +36,8 @@ public class AlienGroupController : MonoBehaviour
             alien.transform.position = nextAlienPosition;
             nextAlienPosition.x += distanceBetweenAliens;
         }
+
+        Physics2D.SyncTransforms();
     }
 
     

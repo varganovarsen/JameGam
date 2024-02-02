@@ -132,12 +132,54 @@ ScriptedImporter:
       height: 63
     spriteID: cedfebeb3dec3454f8b8b1f558e620fd
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 12, y: -29.5}
+      - {x: 16, y: -24.5}
+      - {x: 16, y: -7.5}
+      - {x: 14, y: -3.5}
+      - {x: 7, y: 3.5}
+      - {x: 5, y: 6.5}
+      - {x: 15, y: 6.5}
+      - {x: 16, y: 7.5}
+      - {x: 16, y: 31.5}
+      - {x: -16, y: 31.5}
+      - {x: -16, y: 7.5}
+      - {x: -15, y: 6.5}
+      - {x: -5, y: 3.5}
+      - {x: -7, y: 3.5}
+      - {x: -14, y: -3.5}
+      - {x: -16, y: -7.5}
+      - {x: -16, y: -23.5}
+      - {x: -14, y: -27.5}
+      - {x: -9, y: -31.5}
+      - {x: 8, y: -31.5}
     vertices: []
-    spritePhysicsOutline: []
+    spritePhysicsOutline:
+    - outline:
+      - {x: 12, y: -29.5}
+      - {x: 16, y: -24.5}
+      - {x: 16, y: -7.5}
+      - {x: 14, y: -3.5}
+      - {x: 7, y: 3.5}
+      - {x: 5, y: 6.5}
+      - {x: 15, y: 6.5}
+      - {x: 16, y: 7.5}
+      - {x: 16, y: 31.5}
+      - {x: -16, y: 31.5}
+      - {x: -16, y: 7.5}
+      - {x: -15, y: 6.5}
+      - {x: -5, y: 3.5}
+      - {x: -7, y: 3.5}
+      - {x: -14, y: -3.5}
+      - {x: -16, y: -7.5}
+      - {x: -16, y: -23.5}
+      - {x: -14, y: -27.5}
+      - {x: -9, y: -31.5}
+      - {x: 8, y: -31.5}
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 0.558
     uvTransform: {x: 4, y: 4}
   spriteSheetImportData: []
   asepriteLayers:

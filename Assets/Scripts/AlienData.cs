@@ -37,8 +37,9 @@ public class AlienData : MonoBehaviour
     }
 
 
-    private void Start() {
+private void Start() {
         nameText.text = AlienName;
+        gameObject.name = AlienName;
         _canvasGroup.alpha = 0;
         _elapsedTime = forgetNameTime;
         
@@ -81,6 +82,18 @@ public class AlienData : MonoBehaviour
     {
         forgettingName = false;
         _canvasGroup.alpha = 0f;
+    }
+
+    public bool Guess(string guessedName)
+    {
+        _canvasGroup.alpha = 1f;
+
+        bool _guessIsRight = guessedName == AlienName;
+        nameText.color = _guessIsRight ? Color.green : Color.red;
+
+        return _guessIsRight;
+
+
     }
     
 }

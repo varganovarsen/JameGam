@@ -132,9 +132,19 @@ ScriptedImporter:
       height: 28
     spriteID: 4388eedf4241b9848aefffcde35f24ad
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 5, y: 14}
+      - {x: -5, y: 14}
+      - {x: -5, y: -14}
+      - {x: 5, y: -14}
     vertices: []
-    spritePhysicsOutline: []
+    spritePhysicsOutline:
+    - outline:
+      - {x: 5, y: 14}
+      - {x: -5, y: 14}
+      - {x: -5, y: -14}
+      - {x: 5, y: -14}
     indices: 
     edges: []
     tessellationDetail: 0

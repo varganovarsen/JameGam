@@ -132,12 +132,42 @@ ScriptedImporter:
       height: 64
     spriteID: 77f7de0c79ee3384c94c4293901ff9c8
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 16, y: 18}
+      - {x: 12, y: 28}
+      - {x: 7, y: 32}
+      - {x: -7, y: 32}
+      - {x: -12, y: 28}
+      - {x: -16, y: 18}
+      - {x: -16, y: -32}
+      - {x: 16, y: -32}
+    - outline:
+      - {x: -1, y: -17}
+      - {x: -1, y: -13}
+      - {x: -2, y: -12}
+      - {x: 2, y: -12}
+      - {x: 1, y: -13}
+      - {x: 1, y: -17}
+      - {x: 0, y: -18}
     vertices: []
-    spritePhysicsOutline: []
+    spritePhysicsOutline:
+    - outline:
+      - {x: 15, y: -29}
+      - {x: 12, y: -26}
+      - {x: 16, y: -18}
+      - {x: 16, y: 18}
+      - {x: 12, y: 28}
+      - {x: 7, y: 32}
+      - {x: -7, y: 32}
+      - {x: -12, y: 28}
+      - {x: -16, y: 17}
+      - {x: -16, y: -23}
+      - {x: -13, y: -32}
+      - {x: 15, y: -32}
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 0.414
     uvTransform: {x: 4, y: 4}
   spriteSheetImportData: []
   asepriteLayers:
