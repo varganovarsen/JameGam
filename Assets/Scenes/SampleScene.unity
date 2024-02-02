@@ -1513,7 +1513,7 @@ GameObject:
   m_Component:
   - component: {fileID: 162040267}
   m_Layer: 0
-  m_Name: Circle (12)
+  m_Name: spawn_point
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2756,7 +2756,7 @@ GameObject:
   m_Component:
   - component: {fileID: 346391317}
   m_Layer: 0
-  m_Name: Circle (10)
+  m_Name: spawn_point
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3923,7 +3923,7 @@ GameObject:
   m_Component:
   - component: {fileID: 453252051}
   m_Layer: 0
-  m_Name: Circle (6)
+  m_Name: spawn_point
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3954,7 +3954,7 @@ GameObject:
   m_Component:
   - component: {fileID: 469232779}
   m_Layer: 0
-  m_Name: Circle (4)
+  m_Name: spawn_point
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -4204,7 +4204,7 @@ GameObject:
   m_Component:
   - component: {fileID: 503075580}
   m_Layer: 0
-  m_Name: Circle (5)
+  m_Name: spawn_point
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -4235,7 +4235,7 @@ GameObject:
   m_Component:
   - component: {fileID: 509472072}
   m_Layer: 0
-  m_Name: Circle (15)
+  m_Name: spawn_point
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -4757,7 +4757,7 @@ GameObject:
   m_Component:
   - component: {fileID: 545825905}
   m_Layer: 0
-  m_Name: Circle (13)
+  m_Name: spawn_point
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -6823,7 +6823,7 @@ GameObject:
   m_Component:
   - component: {fileID: 552558125}
   m_Layer: 0
-  m_Name: Circle (16)
+  m_Name: spawn_point
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -11212,6 +11212,7 @@ Transform:
   - {fileID: 1247384809}
   - {fileID: 552558125}
   - {fileID: 1714323009}
+  - {fileID: 1943875481}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &964279651
@@ -12610,7 +12611,7 @@ GameObject:
   m_Component:
   - component: {fileID: 980076962}
   m_Layer: 0
-  m_Name: Circle (14)
+  m_Name: spawn_point
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -13057,7 +13058,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1010884371}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: spawn_point
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -13510,7 +13511,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1103102918}
   m_Layer: 0
-  m_Name: Circle (7)
+  m_Name: spawn_point
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -14456,7 +14457,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1247384809}
   m_Layer: 0
-  m_Name: Circle (9)
+  m_Name: spawn_point
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -19149,7 +19150,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1418346734}
   m_Layer: 0
-  m_Name: Circle (8)
+  m_Name: spawn_point
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -20142,7 +20143,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1516769810}
   m_Layer: 0
-  m_Name: Circle (3)
+  m_Name: spawn_point
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -22062,7 +22063,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1632180249}
   m_Layer: 0
-  m_Name: Circle (2)
+  m_Name: spawn_point
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -22265,7 +22266,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1714323009}
   m_Layer: 0
-  m_Name: Circle (17)
+  m_Name: spawn_point
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -23315,14 +23316,6 @@ PrefabInstance:
       value: alienGenerator (1)
       objectReference: {fileID: 0}
     - target: {fileID: 5648801989498126423, guid: a540364e854ae4947a830905cc80959c, type: 3}
-      propertyPath: aliensToGenerate
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5648801989498126423, guid: a540364e854ae4947a830905cc80959c, type: 3}
-      propertyPath: spawn_points.Array.size
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 5648801989498126423, guid: a540364e854ae4947a830905cc80959c, type: 3}
       propertyPath: 'spawn_points.Array.data[0]'
       value: 
       objectReference: {fileID: 1010884371}
@@ -23394,6 +23387,10 @@ PrefabInstance:
       propertyPath: 'spawn_points.Array.data[17]'
       value: 
       objectReference: {fileID: 1714323009}
+    - target: {fileID: 8179677375960769086, guid: a540364e854ae4947a830905cc80959c, type: 3}
+      propertyPath: StartAlienGuessRowPoint
+      value: 
+      objectReference: {fileID: 1943875481}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23972,7 +23969,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1902896694}
   m_Layer: 0
-  m_Name: Circle (1)
+  m_Name: spawn_point
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -24345,6 +24342,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1943875480
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1943875481}
+  m_Layer: 0
+  m_Name: StartAlienGuessRowPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1943875481
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943875480}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -18.87, y: -15.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 957413099}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1944152949
 GameObject:
   m_ObjectHideFlags: 0
@@ -24746,7 +24774,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2028892777}
   m_Layer: 0
-  m_Name: Circle (11)
+  m_Name: spawn_point
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0

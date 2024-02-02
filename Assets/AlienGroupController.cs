@@ -14,6 +14,7 @@ public class AlienGroupController : MonoBehaviour
     [SerializeField] float distanceBetweenAliens = 3f;
 
     public static event Action AllAliensGuessed;
+    [SerializeField] Transform StartAlienGuessRowPoint;
 
     private void Awake()
     {
@@ -25,19 +26,27 @@ public class AlienGroupController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        
+    }
+
+    void OnEnable()
+    {
+        GameStateController.ChangeState += OnGameStateChenged;
+    }
+
+    private void OnDisable()
+    {
+        GameStateController.ChangeState -= OnGameStateChenged;
     }
 
     public void SetAliensPositionForGuessing()
     {
-
-
-        GameStateController.SetState(GameState.guessing);
-
         _alienPositions = new List<Vector2>(); 
 
-        Vector2 nextAlienPosition = new Vector2(0, 0);
+        Vector2 nextAlienPosition = StartAlienGuessRowPoint.transform.position;
 
-        player_movement.instance.transform.position = new Vector2(-distanceBetweenAliens, 0);
+        player_movement.instance.transform.position = nextAlienPosition + new Vector2(-distanceBetweenAliens, 0);
 
         for (int i = 0; i < aliens.Count; i++)
         {
@@ -49,6 +58,18 @@ public class AlienGroupController : MonoBehaviour
         
 
         Physics2D.SyncTransforms();
+    }
+
+    public void OnGameStateChenged(GameState state)
+    {
+        switch (state)
+        {
+            case GameState.guessing:
+            SetAliensPositionForGuessing();
+            break;
+            default:
+            break;
+        }
     }
 
     public void UpdateAliensPositionForGuessing()
@@ -64,19 +85,6 @@ public class AlienGroupController : MonoBehaviour
             aliens[i].transform.position = _alienPositions[i];
         }
 
-    }
-
-    
-
-
-
-    
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SetAliensPositionForGuessing();
-        }
     }
 
     

@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2e6a62f41dfbe34384481cec4f3e9ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aliensToGenerate: 3
+  aliensToGenerate: 10
   alienPrefab: {fileID: 1895400197322616387, guid: ad697b59bd934c94c9c3e7aca48bda02, type: 3}
   spriteMaterials:
   - {fileID: 2100000, guid: bbb22b36e8bc1ce4da620827b176ecfa, type: 2}
@@ -128,7 +128,25 @@ MonoBehaviour:
   - {fileID: 2100000, guid: fbf57ae937a2f0d478de31c8527e66f9, type: 2}
   - {fileID: 2100000, guid: 0553dcac641396142b239820994d9c58, type: 2}
   _loader: {fileID: 7045995040944220653}
-  spawn_points: []
+  spawn_points:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &8179677375960769086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,3 +161,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aliens: []
   distanceBetweenAliens: 3
+  StartAlienGuessRowPoint: {fileID: 0}
