@@ -12,6 +12,7 @@ public class NameUiDrag : MonoBehaviour, IDragHandler, IBeginDragHandler, IDropH
     CanvasGroup _canvasGroup;
 
     [SerializeField] LayerMask alienLayer;
+    bool guessedRight = false;
 
     private static AlienData currentAlien;
     List<Vector2> nameDrops;
@@ -38,6 +39,8 @@ public class NameUiDrag : MonoBehaviour, IDragHandler, IBeginDragHandler, IDropH
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+
+        
         _startDragPosition = transform.localPosition;
         
         //GetComponent<TMP_Text>().raycastTarget = false;
@@ -93,14 +96,16 @@ public class NameUiDrag : MonoBehaviour, IDragHandler, IBeginDragHandler, IDropH
             return;
         }
 
+        ResetPosition();
+
         
         if (_data.Guess(GetComponent<TMP_Text>().text))
         {
-            Destroy(gameObject);
-        } else
-        {
-            ResetPosition();
+            guessedRight = true;
+            GetComponent<TMP_Text>().color = Color.green;
+            this.enabled = false;
         }
+        
     }
 
     void ResetPosition(){
