@@ -7,6 +7,7 @@ public class player_movement : MonoBehaviour
     private bool _isMoving = false;
     private Vector2 _targetPosition;
     public float _speed = 2f;
+    public Animator anim;
 
     [SerializeField] private float targetRadius = 0.25f;
 
@@ -22,6 +23,14 @@ public class player_movement : MonoBehaviour
         if (_isMoving)
         {
             Move();
+        }
+        if (_isMoving)
+        {
+            anim.SetBool("isMoving", false);
+        }
+        else
+        {
+            anim.SetBool("isMoving", true);
         }
     }
 
