@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      imgonline-com-ua-Transparent-backgr-u8H371NwmIKjJ3_0: 7638538794160614861
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
