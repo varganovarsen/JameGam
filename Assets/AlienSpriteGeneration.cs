@@ -9,7 +9,6 @@ public class AlienSpriteGeneration : MonoBehaviour
 {
     [SerializeField, Min(1)] private int aliensToGenerate;
     [SerializeField] GameObject alienPrefab;
-    [SerializeField] Vector2 spawnRandom;
     NameBank _nameBank;
 
     List<GameObject> bodyPrefabs;
@@ -18,7 +17,9 @@ public class AlienSpriteGeneration : MonoBehaviour
 
     [SerializeField] private List<Material> spriteMaterials;
 
-    [SerializeField] private GoogleSheetLoader _loader;
+    [SerializeField] public GoogleSheetLoader _loader;
+
+    [SerializeField] public Transform[] spawn_points;
 
     private void Awake()
     {
@@ -71,8 +72,13 @@ public class AlienSpriteGeneration : MonoBehaviour
    
     public void GenerateAlien()
     {
-        Vector2 position = new Vector2(Random.Range(-spawnRandom.x, spawnRandom.x),
-            Random.Range(-spawnRandom.y, spawnRandom.y));
+        int rd = Random.Range(0,18);
+        while(spawn_points[rd].position == new Vector3(0,0,0))
+        {
+            rd = Random.Range(0,18);
+        }
+        Vector2 position = spawn_points[rd].position;
+        spawn_points[rd].position = new Vector3(0,0,0);
 
         GameObject alien = Instantiate(alienPrefab, position, Quaternion.identity);
         AlienData _alienData;
