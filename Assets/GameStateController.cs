@@ -34,7 +34,7 @@ public class GameStateController : MonoBehaviour
     {
         currentState = state;
         ChangeState.Invoke(state);
-        
+
         switch (currentState)
         {
             case GameState.meeting:
@@ -69,7 +69,7 @@ public class GameStateController : MonoBehaviour
 
         // Applying game state
 
-        Time.timeScale = timeRunning ? 0 : 1;
+        Time.timeScale = timeRunning ? 1 : 0;
 
 
     }

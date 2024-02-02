@@ -8,6 +8,7 @@ public class AlienGroupController : MonoBehaviour
 {
 
     public List<AlienData> aliens;
+    private List<Vector2> _alienPositions;
     public static AlienGroupController instance;
     [SerializeField] float distanceBetweenAliens = 3f;
 
@@ -27,18 +28,36 @@ public class AlienGroupController : MonoBehaviour
     {
         GameStateController.SetState(GameState.guessing);
 
+        _alienPositions = new List<Vector2>(); 
+
         Vector2 nextAlienPosition = new Vector2(0, 0);
 
         player_movement.instance.transform.position = new Vector2(-distanceBetweenAliens, 0);
 
-        foreach (AlienData alien in aliens)
+        for (int i = 0; i < aliens.Count; i++)
         {
-            alien.transform.position = nextAlienPosition;
+            aliens[i].transform.position = nextAlienPosition;
+            _alienPositions.Add(nextAlienPosition);
+
             nextAlienPosition.x += distanceBetweenAliens;
         }
+        
 
         Physics2D.SyncTransforms();
     }
+
+    public void UpdateAliensPositionForGuessing()
+    {
+        for (int i = 0; i < aliens.Count; i++)
+        {
+            aliens[i].transform.position = _alienPositions[i];
+        }
+
+    }
+
+    
+
+
 
     
     private void Update()

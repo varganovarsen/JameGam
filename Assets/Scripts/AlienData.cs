@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class AlienData : MonoBehaviour
 {
-
+    private const float SecondsBeforeDelete = 4f;
     public string AlienName;
     public bool meeted = false;
     public Transform AlienMouthPoint;
@@ -91,9 +91,19 @@ private void Start() {
         bool _guessIsRight = guessedName == AlienName;
         nameText.color = _guessIsRight ? Color.green : Color.red;
 
+        IEnumerator cor = DeleteAlien();
+        StartCoroutine(cor);
+
         return _guessIsRight;
+    }
 
+    public IEnumerator DeleteAlien()
+    {   
 
+        yield return new WaitForSecondsRealtime(SecondsBeforeDelete);
+        AlienGroupController.instance.aliens.Remove(this);
+        AlienGroupController.instance.UpdateAliensPositionForGuessing();
+        Destroy(gameObject);    
     }
     
 }
