@@ -70,19 +70,19 @@ public class NameUiDrag : MonoBehaviour, IDragHandler, IBeginDragHandler, IDropH
         filter2D.useLayerMask = true;
 
         Physics2D.OverlapPoint(posToCheck, filter2D, col);
-        
+
         if (col.Count == 0)
         {
             ResetPosition();
             return;
         }
-        
+
         foreach (var C in col)
         {
             C.TryGetComponent<AlienData>(out _data);
             Debug.Log(C.name);
             if (_data)
-            break;
+                break;
         }
 
         bool isAboveAlien = _data != null;
@@ -97,15 +97,18 @@ public class NameUiDrag : MonoBehaviour, IDragHandler, IBeginDragHandler, IDropH
         }
 
         ResetPosition();
+        GuessAlienName(_data);
 
-        
+    }
+
+    public virtual void GuessAlienName(AlienData _data)
+    {
         if (_data.Guess(GetComponent<TMP_Text>().text))
         {
             guessedRight = true;
             GetComponent<TMP_Text>().color = Color.green;
             this.enabled = false;
         }
-        
     }
 
     void ResetPosition(){
@@ -115,13 +118,13 @@ public class NameUiDrag : MonoBehaviour, IDragHandler, IBeginDragHandler, IDropH
     }
 
     
-    private void OnDrawGizmos()
-    {
-        foreach (var dropPos in nameDrops)
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(dropPos, 0.1f);
-        }
-    }
+    // private void OnDrawGizmos()
+    // {
+    //     foreach (var dropPos in nameDrops)
+    //     {
+    //         Gizmos.color = Color.red;
+    //         Gizmos.DrawWireSphere(dropPos, 0.1f);
+    //     }
+    // }
 }
 

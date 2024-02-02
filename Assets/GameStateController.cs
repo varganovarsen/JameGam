@@ -30,6 +30,11 @@ public class GameStateController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// This function is called when the object becomes enabled and active.
+    /// </summary>
+    
+
     public static void SetState(GameState state)
     {
         currentState = state;
@@ -52,7 +57,7 @@ public class GameStateController : MonoBehaviour
                 timeRunning = false;
             break;
 
-            case GameState.menu:
+            case GameState.mainMenu:
                 CanAct = false;
                 timeRunning = true;
             break;
@@ -60,6 +65,11 @@ public class GameStateController : MonoBehaviour
             case GameState.cutscene:
                 CanAct = false;
                 timeRunning = true;
+            break;
+
+            case GameState.levelMenu:
+                CanAct = false;
+                timeRunning = false;
             break;
 
             default:
@@ -83,6 +93,8 @@ public enum GameState
     meeting,
     guessing,
     pause,
-    menu,
-    cutscene
+    mainMenu,
+    cutscene,
+
+    levelMenu
 }

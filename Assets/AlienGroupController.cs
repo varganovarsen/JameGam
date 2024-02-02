@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
@@ -11,6 +12,8 @@ public class AlienGroupController : MonoBehaviour
     private List<Vector2> _alienPositions;
     public static AlienGroupController instance;
     [SerializeField] float distanceBetweenAliens = 3f;
+
+    public static event Action AllAliensGuessed;
 
     private void Awake()
     {
@@ -26,6 +29,8 @@ public class AlienGroupController : MonoBehaviour
 
     public void SetAliensPositionForGuessing()
     {
+
+
         GameStateController.SetState(GameState.guessing);
 
         _alienPositions = new List<Vector2>(); 
@@ -48,6 +53,12 @@ public class AlienGroupController : MonoBehaviour
 
     public void UpdateAliensPositionForGuessing()
     {
+        if (aliens.Count == 0 )
+        {
+            AllAliensGuessed.Invoke();
+            GameStateController.SetState(GameState.levelMenu);
+        }
+
         for (int i = 0; i < aliens.Count; i++)
         {
             aliens[i].transform.position = _alienPositions[i];

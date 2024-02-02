@@ -90,7 +90,9 @@ private void Start() {
 
         bool _guessIsRight = guessedName == AlienName;
         nameText.color = _guessIsRight ? Color.green : Color.red;
-
+        if (_guessIsRight)
+            GuestGuessController.instance.levelGuessData._rightGuessedAliens++;
+        
         IEnumerator cor = DeleteAlien();
         StartCoroutine(cor);
 
@@ -101,6 +103,7 @@ private void Start() {
     {   
 
         yield return new WaitForSecondsRealtime(SecondsBeforeDelete);
+        
         AlienGroupController.instance.aliens.Remove(this);
         AlienGroupController.instance.UpdateAliensPositionForGuessing();
         Destroy(gameObject);    
