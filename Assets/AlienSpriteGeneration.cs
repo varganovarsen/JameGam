@@ -72,10 +72,10 @@ public class AlienSpriteGeneration : MonoBehaviour
    
     public void GenerateAlien()
     {
-        int rd = Random.Range(0,18);
+        int rd = Random.Range(0,spawn_points.Length);
         while(spawn_points[rd].position == new Vector3(0,0,0))
         {
-            rd = Random.Range(0,18);
+            rd = Random.Range(0,spawn_points.Length);
         }
         Vector2 position = spawn_points[rd].position;
         spawn_points[rd].position = new Vector3(0,0,0);
