@@ -9,9 +9,12 @@ public class player_movement : MonoBehaviour
 
     private bool _isMoving = false;
     private Vector2 _targetPosition;
-    public float _speed = 2f;
+    public float _speed = 0.1f;
 
     [SerializeField] private float targetRadius = 0.25f;
+
+    private Animator anim;
+    private Rigidbody2D rb;
 
     
     [SerializeField] LayerMask wallLayer;
@@ -25,6 +28,12 @@ public class player_movement : MonoBehaviour
             Destroy(gameObject);
         }
 
+    }
+
+    private void Start()
+    {
+        anim = GetComponentInChildren<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -76,11 +85,20 @@ public class player_movement : MonoBehaviour
 
     private void Move()
     {
-        transform.position = Vector3.MoveTowards(transform.position, _targetPosition, _speed * Time.fixedDeltaTime);
+       // transform.position = Vector2.MoveTowards(transform.position, _targetPosition, _speed * Time.fixedDeltaTime);
         if (Vector2.Distance(transform.position, _targetPosition) < targetRadius)
         {
             _isMoving = false;
         }
+
+        Vector2 velocity  = (_targetPosition - rb.position).normalized * _speed;
+        rb.MovePosition(rb.position + velocity);
+
+       // Debug.Log(velocity);
+        anim.SetFloat("directionX", velocity.x);
+        anim.SetFloat("directionY", velocity.y);
+        anim.SetBool("_isMoving", _isMoving);
+
     }
 
     
