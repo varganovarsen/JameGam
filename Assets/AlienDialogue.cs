@@ -10,6 +10,8 @@ public class AlienDialogue : MonoBehaviour
     bool canStartDialogue = false;
 
     AlienData _data;
+    private static readonly int AddName = Animator.StringToHash("AddName");
+    private static readonly int IsMoving = Animator.StringToHash("_isMoving");
 
     /// <summary>
     /// Called when the mouse enters the GUIElement or Collider.
@@ -44,6 +46,9 @@ public class AlienDialogue : MonoBehaviour
         {
             if (!_data.meeted)
             {
+                player_movement.instance.anim.SetBool(IsMoving, false);
+                player_movement.instance.anim.SetTrigger(AddName);
+                
                 Meet();
             }
         }

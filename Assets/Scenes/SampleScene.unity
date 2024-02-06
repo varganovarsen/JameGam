@@ -11433,7 +11433,7 @@ TilemapRenderer:
   m_ChunkCullingBounds: {x: 1.0208334, y: 1.2083334, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
-  m_SortOrder: 0
+  m_SortOrder: 2
   m_Mode: 1
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
@@ -14553,7 +14553,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -21962,6 +21962,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InGameUI
       objectReference: {fileID: 0}
+    - target: {fileID: 5681631410242890288, guid: 42e2e018a4668c342871fcd560855b35, type: 3}
+      propertyPath: levelTime
+      value: 500
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25776,14 +25780,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4716862644593032405, guid: dd4b3fee7cd697640abbffe2d2ad099d, type: 3}
-      propertyPath: _speed
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4716862644593032405, guid: dd4b3fee7cd697640abbffe2d2ad099d, type: 3}
-      propertyPath: targetPoint
-      value: 
-      objectReference: {fileID: 914121894}
     - target: {fileID: 8623563321336308917, guid: dd4b3fee7cd697640abbffe2d2ad099d, type: 3}
       propertyPath: m_Name
       value: Player
