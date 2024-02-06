@@ -13,6 +13,15 @@ public class AlienDialogue : MonoBehaviour
     private static readonly int AddName = Animator.StringToHash("AddName");
     private static readonly int IsMoving = Animator.StringToHash("_isMoving");
 
+    public bool CanStartDialogue
+    {
+        get => canStartDialogue;
+        set
+        {
+            canStartDialogue = value;
+        }
+    }
+
     /// <summary>
     /// Called when the mouse enters the GUIElement or Collider.
     /// </summary>
@@ -48,6 +57,8 @@ public class AlienDialogue : MonoBehaviour
             {
                 player_movement.instance.anim.SetBool(IsMoving, false);
                 player_movement.instance.anim.SetTrigger(AddName);
+                GameStateController.CanAct = false;
+                player_movement.instance.TargetPosition = player_movement.instance.transform.position;
                 
                 Meet();
             }
@@ -67,5 +78,10 @@ public class AlienDialogue : MonoBehaviour
         GuestGuessController.instance.MeetGuest(_data);
         //TODO Обновить таймер исчезнования имени
         _data.ResetVisibilityTime();
+    }
+
+    private void SetUpOutline(bool setOutline)
+    {
+        
     }
 }

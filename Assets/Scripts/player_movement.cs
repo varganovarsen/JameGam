@@ -25,6 +25,12 @@ public class player_movement : MonoBehaviour
         set => _isMoving = value;
     }
 
+    public Vector2 TargetPosition
+    {
+        get => _targetPosition;
+        set => _targetPosition = value;
+    }
+
     private void Awake() {
         if (!instance)
         {
@@ -92,6 +98,7 @@ public class player_movement : MonoBehaviour
     private void Move()
     {
        // transform.position = Vector2.MoveTowards(transform.position, _targetPosition, _speed * Time.fixedDeltaTime);
+
         if (Vector2.Distance(transform.position, _targetPosition) < targetRadius)
         {
             IsMoving = false;
