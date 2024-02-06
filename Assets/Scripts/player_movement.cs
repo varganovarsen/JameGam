@@ -13,11 +13,17 @@ public class player_movement : MonoBehaviour
 
     [SerializeField] private float targetRadius = 0.25f;
 
-    private Animator anim;
+    public Animator anim;
     private Rigidbody2D rb;
 
     
     [SerializeField] LayerMask wallLayer;
+
+    public bool IsMoving
+    {
+        get => _isMoving;
+        set => _isMoving = value;
+    }
 
     private void Awake() {
         if (!instance)
@@ -38,7 +44,7 @@ public class player_movement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && GameStateController.CanAct)
         {
             SetTargetPosition();
         }
@@ -47,7 +53,7 @@ public class player_movement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_isMoving && GameStateController.CanAct)
+        if (IsMoving && GameStateController.CanAct)
         {
             Move();
         }
@@ -80,7 +86,7 @@ public class player_movement : MonoBehaviour
             
         }
         
-        _isMoving = true;
+        IsMoving = true;
     }
 
     private void Move()
@@ -88,7 +94,7 @@ public class player_movement : MonoBehaviour
        // transform.position = Vector2.MoveTowards(transform.position, _targetPosition, _speed * Time.fixedDeltaTime);
         if (Vector2.Distance(transform.position, _targetPosition) < targetRadius)
         {
-            _isMoving = false;
+            IsMoving = false;
         }
 
         Vector2 velocity  = (_targetPosition - rb.position).normalized * _speed;
@@ -97,7 +103,7 @@ public class player_movement : MonoBehaviour
        // Debug.Log(velocity);
         anim.SetFloat("directionX", velocity.x);
         anim.SetFloat("directionY", velocity.y);
-        anim.SetBool("_isMoving", _isMoving);
+        anim.SetBool("_isMoving", IsMoving);
 
     }
 
