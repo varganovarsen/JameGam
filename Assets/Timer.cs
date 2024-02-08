@@ -8,7 +8,7 @@ public class Timer : MonoBehaviour
 {
     [SerializeField] TMP_Text timeText;
 
-    [SerializeField] private const float levelTime = 30f;
+    [SerializeField] private const float levelTime = 120f;
     private float remainTime = 0;
     bool stopTimer;
 
